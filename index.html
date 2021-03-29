@@ -24,8 +24,252 @@ blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+	
+// The allergy_count and cold_count variables keep track of how many of the user's symptoms are due to either allergies or a cold.
+// allergyPercent and coldPercent are used to store what percent of answers were indicative of either allergies or a cold.
+// resultText is used to store the percentages once calculated in a text format.
+	
+        var allergy_count = 0;
+        var cold_count = 0;
+	var allergyPercent = 0;
+	var coldPercent = 0;
+	var resultText = document.getElementById("results");
+	
+		
+
+	
+// The allergyAdd() and coldAdd() functions are called each time a response is collected from the user indicating their symptom is either from allergies or a cold.
+// The functions keep track of how many of the user's symptoms are due to either allergies or a cold.
+
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+
+
+        }
+
+        function coldAdd(){
+            cold_count = cold_count + 1;
+
+        }
+
+// The result() function calculates what percent of the user's responses were indicative of allergies and what percent were indicative of a cold.
+// It then displays this result on the screen.
+	function result()
+	{
+		allergyPercent = allergy_count/6 * 100
+		coldPercent = cold_count/6 * 100
+		var resultText = document.getElementById("result")
+		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
+
+
+	}
+	
+	
+  </script>
+
+
+<!-- This sets up the pages to be easily viewable -->
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+
+<!-- In the id="content" area is where things that need to be displayed other than the heading goes -->
+<div id="content" class="w3-container">
+
+	<!-- This is the text the user sees -->
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<!-- This is a button that the user can press to move on to the next page -->
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+
+	<!-- This is more text the user sees -->
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<!-- This is the second page that the user sees. It is the first page with a question. Everything displayed on this page is between  <div class="page"> and </div> -->
+<div class="page" id="one">
+	
+
+	
+	<!-- This bit of code (and all the others bits like it in for the rest of the questions) displays the question number at the top of the screen -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+	
+	
+	<!-- In the id="content" area is where everything that need to be displayed other than the heading goes -->
+    	<div id="content" class="w3-container">  
+		
+	<!-- This asks the user the diagnostic question -->
+	<p>Are your eyes watery or itchy?</p>	
+	
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<a href="#two" onClick = "allergyAdd();" class="w3-btn w3-black"> Yes </a>	
+	<a href="#two"  onClick="coldAdd();" class="w3-btn w3-black"> No </a>
+
+	
+    	</div>
+<!-- This is the end of the first page -->	
+</div>
+	
+
+<div class="page" id="two">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->
+	<p>Do you have a fever?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<a href="#three" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
+	<a href="#three"  onClick="allergyAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+	
+<div class="page" id="three">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->	
+	<p>Do you have a sore throat?</p>
+	
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<a href="#four" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
+	<a href="#four"  onClick="allergyAdd();" class="w3-btn w3-black"> No </a>
+		
+	</div>
+</div>
+	
+	
+<div class="page" id="four">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->
+	<p>Are your symptoms seasonal or chronic?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->	
+	<a href="#five" onClick = "allergyAdd();" class="w3-btn w3-black"> Seasonal </a>	
+	<a href="#five"  onClick="coldAdd();" class="w3-btn w3-black"> Chronic </a>
+	</div>
+</div>
+
+<div class="page" id="five">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->
+	<p>Do you have general aches and pains?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<a href="#six" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
+	<a href="#six" onClick = "allergyAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>
+	
+<div class="page" id="six">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+	
+	<!-- This asks the user the diagnostic question -->
+	<p>Is the weather cold or warm right now?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<a href="#seven" onClick = "coldAdd();" class="w3-btn w3-black"> Cold </a>	
+	<a href="#seven" onClick = "allergyAdd();" class="w3-btn w3-black"> Warm </a>
+	</div>
+</div>
+	
+<div class="page" id="seven">
+	
+	<!-- This bit of code displays the text "Results" at the top of the page -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+	<!-- This is the button which says "Calculate Results!". When clicked, it calles the result() function above -->
+	<a onClick = "result();" class="w3-btn w3-black"> Calculate Results! </a>
+		
+	<!-- This is a place where text will be displayed when id="result" has text associated with it. After clicking the button above, it does, and so the results are displayed -->
+	<p id="result"> </p>
+	</div>
+	
+	
+	
+
+	
+</div>
+
+<!-- This bit of code displays the text "DIY!" at the bottom of each page -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
 </html>
