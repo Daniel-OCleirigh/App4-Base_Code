@@ -122,17 +122,17 @@ blah, blah, blah, blah
 		factorioPercent = factorio_count/6 * 100;
 		minecraftPercent = minecraft_count/6 * 100;
 		
-		var nums = [chessPercent, valorantPercent, rocketleaguePercent, witcherPercent, factorioPercent, minecraftPercent];
+		//var nums = [chessPercent, valorantPercent, rocketleaguePercent, witcherPercent, factorioPercent, minecraftPercent];
 		
-		var max = Math.max(...nums);
-		var names = [Chess, Valorant, Rocket League, Witcher, Factorio, Minecraft];
-		
-		var name = names.indexOf(max);
+		//var max = Math.max(...nums);
+		//var names = [Chess, Valorant, Rocket League, Witcher, Factorio, Minecraft];
+		//
+		//var name = names.indexOf(max);
 		
 		
 		var resultText = document.getElementById("result");
 		//resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
-		resultText.innerHTML = name;
+		resultText.innerHTML = "Chance you will like Valorant = " + valorantPercent + "%" + "<br> Chance you will like Chess =" + chessPercent + "%" + "<br> Chance you will like Rocket League =" + rocketleaguePercent + "%" + "<br> Chance you will like The Witcher III =" + witcherPercent + "%" + "<br> Chance you will like Factorio =" + factorioPercent + "%" + "<br> Chance you will like Minecraft =" + minecraftPercent + "%"; 
 		
 		
 		
