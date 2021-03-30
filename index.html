@@ -115,22 +115,22 @@ blah, blah, blah, blah
 			
 		
 		
-		chessPercent = chess_count/6 * 100
-		valorantPercent = valorant_count/6 * 100
-		rocketleaguePercent = rocketleague_count/6 * 100
-		witcherPercent = witcher_count/6 * 100
-		factorioPercent = factorio_count/6 * 100
-		minecraftPercent = minecraft_count/6 * 100
+		chessPercent = chess_count/6 * 100;
+		valorantPercent = valorant_count/6 * 100;
+		rocketleaguePercent = rocketleague_count/6 * 100;
+		witcherPercent = witcher_count/6 * 100;
+		factorioPercent = factorio_count/6 * 100;
+		minecraftPercent = minecraft_count/6 * 100;
 		
-		var nums = [chessPercent, valorantPercent, rocketleaguePercent, witcherPercent, factorioPercent, minecraftPercent]
+		var nums = [chessPercent, valorantPercent, rocketleaguePercent, witcherPercent, factorioPercent, minecraftPercent];
 		
 		var max = Math.max(...nums);
-		var names = [Chess, Valorant, Rocket League, Witcher, Factorio, Minecraft]
+		var names = [Chess, Valorant, Rocket League, Witcher, Factorio, Minecraft];
 		
-		var name = names.indexOf(max)
+		var name = names.indexOf(max);
 		
 		
-		var resultText = document.getElementById("result")
+		var resultText = document.getElementById("result");
 		//resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
 		resultText.innerHTML = max[0];
 		
