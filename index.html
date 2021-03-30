@@ -24,7 +24,7 @@ blah, blah, blah, blah
 -->
 
    <head> 
-      <title>Hello World</title>  
+      <title>Which Video Game Should You Play?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -38,7 +38,20 @@ blah, blah, blah, blah
 // allergyPercent and coldPercent are used to store what percent of answers were indicative of either allergies or a cold.
 // resultText is used to store the percentages once calculated in a text format.
 	
-        var allergy_count = 0;
+        var chess_count = 0;
+	var valorant_count = 0;
+        var rocketleague_count = 0;
+        var minecraft_count = 0;
+        var factorio_count = 0;
+        var witcher_count = 0;
+	
+	var chessPercent = 0;
+	var valorantPercent = 0;
+	var rocketleaguePercent = 0;
+	var minecraftPercent = 0;
+	var factorioPercent = 0;
+	var witcherPercent = 0;
+	
         var cold_count = 0;
 	var allergyPercent = 0;
 	var coldPercent = 0;
@@ -52,14 +65,41 @@ blah, blah, blah, blah
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-
-
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
-
         }
+	
+	function chessAdd()
+	{
+		chess_count = chess_count + 1;	
+	}
+
+	function valorantAdd()
+	{
+		valorant_count = valorant_count + 1;	
+	}
+	
+	function rocketleagueAdd()
+	{
+		rocketleague_count = rocketleague_count + 1;	
+	}
+	
+	function minecraftAdd()
+	{
+		minecraft_count = minecraft_count + 1;	
+	}
+
+	function factorioAdd()
+	{
+		factorio_count = factorio_count + 1;	
+	}
+	
+	function witcherAdd()
+	{
+		witcher_count = witcher_count + 1;	
+	}
 
 // The result() function calculates what percent of the user's responses were indicative of allergies and what percent were indicative of a cold.
 // It then displays this result on the screen.
@@ -67,8 +107,16 @@ blah, blah, blah, blah
 	{
 		allergyPercent = allergy_count/6 * 100
 		coldPercent = cold_count/6 * 100
+		
+		chessPercent = chess_count/6 * 100
+		valorantPercent = valorant_count/6 * 100
+		rocketleaguePercent = rocketleague_count/6 * 100
+		witcherPercent = witcher_count/6 * 100
+		factorioPercent = factorio_count/6 * 100
+		minecraftPercent = minecraft_count/6 * 100
+		
 		var resultText = document.getElementById("result")
-		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
+		resultText.innerHTML = "Probability it is allergies = " + chessPercent + "%" + "<br> Probability it is a cold =" + minecraftPercent + "%"; 
 
 
 	}
@@ -109,7 +157,7 @@ blah, blah, blah, blah
 <div id="content" class="w3-container">
 
 	<!-- This is the text the user sees -->
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you looking for a new video game to play?. Answer a few short questions to get a recommendation!</p>
 	
 	<!-- This is a button that the user can press to move on to the next page -->
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
@@ -118,7 +166,7 @@ blah, blah, blah, blah
 	<!-- This is more text the user sees -->
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
 
 <!-- This is the second page that the user sees. It is the first page with a question. Everything displayed on this page is between  <div class="page"> and </div> -->
 <div class="page" id="one">
@@ -136,11 +184,11 @@ blah, blah, blah, blah
     	<div id="content" class="w3-container">  
 		
 	<!-- This asks the user the diagnostic question -->
-	<p>Are your eyes watery or itchy?</p>	
+	<p>Are you willing to pay for the game?</p>	
 	
 	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
-	<a href="#two" onClick = "allergyAdd();" class="w3-btn w3-black"> Yes </a>	
-	<a href="#two"  onClick="coldAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#two" onClick = "witcherAdd(); factorioAdd(); minecraftAdd();" class="w3-btn w3-black"> Yes </a>	
+	<a href="#two"  onClick="chessAdd(); valorantAdd(); rocketleagueAdd();" class="w3-btn w3-black"> No </a>
 
 	
     	</div>
@@ -159,11 +207,11 @@ blah, blah, blah, blah
 	<div id="content" class="w3-container">
 		
 	<!-- This asks the user the diagnostic question -->
-	<p>Do you have a fever?</p>
+	<p>Do you prefer Action games or Strategy games?</p>
 		
 	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
-	<a href="#three" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
-	<a href="#three"  onClick="allergyAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#three" onClick = "valorantAdd(); rocketleagueAdd(); witcherAdd();" class="w3-btn w3-black"> Action </a>	
+	<a href="#three"  onClick="chessAdd(); minecraftAdd(); factorioAdd();" class="w3-btn w3-black"> Strategy </a>
 	</div>
 </div>	
 	
@@ -178,11 +226,11 @@ blah, blah, blah, blah
 	<div id="content" class="w3-container">
 		
 	<!-- This asks the user the diagnostic question -->	
-	<p>Do you have a sore throat?</p>
+	<p>Do you like First-Person games or Third-Person games?</p>
 	
 	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
-	<a href="#four" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
-	<a href="#four"  onClick="allergyAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#four" onClick = "minecraftAdd(); valorantAdd();" class="w3-btn w3-black"> First-Person </a>	
+	<a href="#four"  onClick="witcherAdd(); rocketleagueAdd(); factorioAdd(); chessAdd();" class="w3-btn w3-black"> Third-Person </a>
 		
 	</div>
 </div>
@@ -199,11 +247,11 @@ blah, blah, blah, blah
 	<div id="content" class="w3-container">
 		
 	<!-- This asks the user the diagnostic question -->
-	<p>Are your symptoms seasonal or chronic?</p>
+	<p>Do you like fast-paced games or slower-paced games?</p>
 		
 	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->	
-	<a href="#five" onClick = "allergyAdd();" class="w3-btn w3-black"> Seasonal </a>	
-	<a href="#five"  onClick="coldAdd();" class="w3-btn w3-black"> Chronic </a>
+	<a href="#five" onClick = "valorantAdd(); rocketleagueAdd();" class="w3-btn w3-black"> Fast-paced </a>	
+	<a href="#five"  onClick="witcherAdd(); chessAdd(); factorioAdd(); minecraftAdd();" class="w3-btn w3-black"> Slower-paced </a>
 	</div>
 </div>
 
@@ -218,11 +266,11 @@ blah, blah, blah, blah
 	<div id="content" class="w3-container">
 		
 	<!-- This asks the user the diagnostic question -->
-	<p>Do you have general aches and pains?</p>
+	<p>Do you like building games?</p>
 		
 	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
-	<a href="#six" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
-	<a href="#six" onClick = "allergyAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#six" onClick = "minecraftAdd(); factorioAdd();" class="w3-btn w3-black"> Yes </a>	
+	<a href="#six" onClick = "valorantAdd(); chessAdd(); rocketleagueAdd(); witcherAdd();" class="w3-btn w3-black"> No </a>
 	</div>
 </div>
 	
@@ -237,11 +285,11 @@ blah, blah, blah, blah
 	<div id="content" class="w3-container">
 	
 	<!-- This asks the user the diagnostic question -->
-	<p>Is the weather cold or warm right now?</p>
+	<p>Do you like games that have an ending, or games that can be played forever?</p>
 		
 	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
-	<a href="#seven" onClick = "coldAdd();" class="w3-btn w3-black"> Cold </a>	
-	<a href="#seven" onClick = "allergyAdd();" class="w3-btn w3-black"> Warm </a>
+	<a href="#seven" onClick = "witcherAdd(); factorioAdd(); minecraftAdd();" class="w3-btn w3-black"> Games with an ending </a>	
+	<a href="#seven" onClick = "minecraftAdd(); valorantAdd(); rocketleagueAdd(); chessAdd();" class="w3-btn w3-black"> Games that can be played forever </a>
 	</div>
 </div>
 	
