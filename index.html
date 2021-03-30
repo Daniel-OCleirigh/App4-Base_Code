@@ -6,8 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Daniel O'Cleirigh
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -16,11 +15,7 @@ Research Educator:
 Timothy Riedel
 triedel@utexas.edu
  
-Brief Description of Goal of Code:
-blah, blah, blah,
- 
-Known Issues:
-blah, blah, blah, blah
+
 -->
 
    <head> 
@@ -34,8 +29,8 @@ blah, blah, blah, blah
 
 <script>
 	
-// The allergy_count and cold_count variables keep track of how many of the user's symptoms are due to either allergies or a cold.
-// allergyPercent and coldPercent are used to store what percent of answers were indicative of either allergies or a cold.
+// The _count variables keep track of how many of the user's responses allign with each game.
+// the Percent variables are used to store what percent of answers were indicative of the particular game.
 // resultText is used to store the percentages once calculated in a text format.
 	
         var chess_count = 0;
@@ -52,16 +47,14 @@ blah, blah, blah, blah
 	var factorioPercent = 0;
 	var witcherPercent = 0;
 	
-        var cold_count = 0;
-	var allergyPercent = 0;
-	var coldPercent = 0;
+
 	var resultText = document.getElementById("results");
 	
 		
 
 	
-// The allergyAdd() and coldAdd() functions are called each time a response is collected from the user indicating their symptom is either from allergies or a cold.
-// The functions keep track of how many of the user's symptoms are due to either allergies or a cold.
+// The Add() functions are called each time a response is collected from the user indicating their preference matches with any particular game.
+// The functions keep track of how many of the user's preferences allign with each game.
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
@@ -101,7 +94,7 @@ blah, blah, blah, blah
 		witcher_count = witcher_count + 1;	
 	}
 
-// The result() function calculates what percent of the user's responses were indicative of allergies and what percent were indicative of a cold.
+// The result() function calculates what percent of the user's responses were indicative of which game.
 // It then displays this result on the screen.
 	function result()
 	{
@@ -206,7 +199,7 @@ img, object{
 	<!-- This asks the user the diagnostic question -->
 	<p>Are you willing to pay for the game?</p>	
 	
-	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<!-- These are two buttons with both answers to the question poised above. When clicked, one set of three Add() functions will be called -->
 	<a href="#two" onClick = "witcherAdd(); factorioAdd(); minecraftAdd();" class="w3-btn w3-black"> Yes </a>	
 	<a href="#two"  onClick="chessAdd(); valorantAdd(); rocketleagueAdd();" class="w3-btn w3-black"> No </a>
 
@@ -229,7 +222,7 @@ img, object{
 	<!-- This asks the user the diagnostic question -->
 	<p>Do you prefer Action games or Strategy games?</p>
 		
-	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<!-- These are two buttons with both answers to the question poised above. When clicked, one set of Add() functions will be called -->
 	<a href="#three" onClick = "valorantAdd(); rocketleagueAdd(); witcherAdd();" class="w3-btn w3-black"> Action </a>	
 	<a href="#three"  onClick="chessAdd(); minecraftAdd(); factorioAdd();" class="w3-btn w3-black"> Strategy </a>
 	</div>
@@ -248,7 +241,7 @@ img, object{
 	<!-- This asks the user the diagnostic question -->	
 	<p>Do you like First-Person games or Third-Person games?</p>
 	
-	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<!-- These are two buttons with both answers to the question poised above. When clicked, one set of Add() functions will be called -->
 	<a href="#four" onClick = "minecraftAdd(); valorantAdd();" class="w3-btn w3-black"> First-Person </a>	
 	<a href="#four"  onClick="witcherAdd(); rocketleagueAdd(); factorioAdd(); chessAdd();" class="w3-btn w3-black"> Third-Person </a>
 		
@@ -270,7 +263,7 @@ img, object{
 	<!-- This asks the user the diagnostic question -->
 	<p>Do you like fast-paced games or slower-paced games?</p>
 		
-	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->	
+	<!-- These are two buttons with both answers to the question poised above. When clicked, one set of Add() functions will be called -->
 	<a href="#five" onClick = "valorantAdd(); rocketleagueAdd();" class="w3-btn w3-black"> Fast-paced </a>	
 	<a href="#five"  onClick="witcherAdd(); chessAdd(); factorioAdd(); minecraftAdd();" class="w3-btn w3-black"> Slower-paced </a>
 	</div>
@@ -289,7 +282,7 @@ img, object{
 	<!-- This asks the user the diagnostic question -->
 	<p>Do you like building games?</p>
 		
-	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<!-- These are two buttons with both answers to the question poised above. When clicked, one set of Add() functions will be called -->
 	<a href="#six" onClick = "minecraftAdd(); factorioAdd();" class="w3-btn w3-black"> Yes </a>	
 	<a href="#six" onClick = "valorantAdd(); chessAdd(); rocketleagueAdd(); witcherAdd();" class="w3-btn w3-black"> No </a>
 	</div>
@@ -308,7 +301,7 @@ img, object{
 	<!-- This asks the user the diagnostic question -->
 	<p>Do you like games that have an ending, or games that can be played forever?</p>
 		
-	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
+	<!-- These are two buttons with both answers to the question poised above. When clicked, one set of Add() functions will be called -->
 	<a href="#seven" onClick = "witcherAdd(); factorioAdd(); minecraftAdd();" class="w3-btn w3-black"> Games with an ending </a>	
 	<a href="#seven" onClick = "minecraftAdd(); valorantAdd(); rocketleagueAdd(); chessAdd();" class="w3-btn w3-black"> Games that can be played forever </a>
 	</div>
